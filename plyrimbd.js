@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 iframeContainer.style.marginTop = "20px";
 
                 const heading = document.createElement("h3");
-                heading.innerText = "Watch online";
-
+                heading.innerText = "Watch Online";
+                
                 // Iframe wrapper for responsive aspect ratio
                 const iframeWrapper = document.createElement("div");
                 iframeWrapper.style.position = "relative";
