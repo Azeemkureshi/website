@@ -14,10 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Naya div create karein
                 const iframeContainer = document.createElement("div");
                 iframeContainer.style.textAlign = "center";
-                iframeContainer.style.marginTop = "20px";
+                iframeContainer.style.marginTop = "0px";
 
                 const heading = document.createElement("h3");
-                heading.innerText = "Watch Online";
+                heading.innerText = "";
                 
                 // Iframe wrapper for responsive aspect ratio
                 const iframeWrapper = document.createElement("div");
