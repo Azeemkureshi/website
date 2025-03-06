@@ -11,6 +11,13 @@ document.addEventListener("DOMContentLoaded", function () {
             if (imdbTitleMatch && imdbTitleMatch[1]) {
                 const imdbTitle = imdbTitleMatch[1];
 
+                // Naya div create karein
+                const iframeContainer = document.createElement("div");
+                iframeContainer.style.textAlign = "center";
+                iframeContainer.style.marginTop = "20px";
+
+                const heading = document.createElement("h3");
+                heading.innerText = "Watch online";
 
                 // Iframe wrapper for responsive aspect ratio
                 const iframeWrapper = document.createElement("div");
