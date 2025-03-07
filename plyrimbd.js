@@ -11,14 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (imdbTitleMatch && imdbTitleMatch[1]) {
                 const imdbTitle = imdbTitleMatch[1];
 
-         // Naya div create karein
-                const iframeContainer = document.createElement("div");
-                iframeContainer.style.textAlign = "center";
-                iframeContainer.style.marginTop = "0px";
-
-                const heading = document.createElement("h3");
-                heading.innerText = "Filmyfly";       
-                
                 // Iframe wrapper for responsive aspect ratio
                 const iframeWrapper = document.createElement("div");
                 iframeWrapper.style.position = "relative";
@@ -42,21 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Append iframe inside wrapper
                 iframeWrapper.appendChild(iframe);
-                iframeContainer.appendChild(heading);
-                iframeContainer.appendChild(iframeWrapper);
+                mainElement.appendChild(iframeWrapper);
 
-                // Main element me insert karein
-                mainElement.appendChild(iframeContainer);
-
-                // Console me log karein
-                console.log("Embedded iframe:", iframe);
-            } else {
-                console.error("IMDb title match nahi hua");
             }
-        } else {
-            console.error("IMDb link nahi mila");
         }
-    } else {
-        console.error("Main element (#main) not found in the document.");
     }
 });
