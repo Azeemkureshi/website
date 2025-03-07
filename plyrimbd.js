@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 iframeContainer.style.marginTop = "0px";
 
                 const heading = document.createElement("h3");
-                heading.innerText = "";
+                heading.innerText = " ";
                 
                 // Iframe wrapper for responsive aspect ratio
                 const iframeWrapper = document.createElement("div");
