@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const mainElement = document.querySelector(".entry-content, .post, .post-content, .post-body, .dwd-btn");
+    let mainElement = document.querySelector("#dkplyr");
+    if (!mainElement) {
+        mainElement = document.querySelector(".entry-content, .post, .post-content, .post-body, .dwd-btn");
+    }
 
     if (mainElement) {
         const allLinks = document.querySelectorAll('a[href*="imdb.com/title/"]');
-
         if (allLinks.length > 0) {
             const imdbUrl = allLinks[0].href;
             const imdbTitleMatch = imdbUrl.match(/title\/(tt\d+)/);
@@ -11,7 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if (imdbTitleMatch && imdbTitleMatch[1]) {
                 const imdbTitle = imdbTitleMatch[1];
 
-                // Iframe wrapper for responsive aspect ratio
+                // Create iframe container for centering
+                const iframeContainer = document.createElement("div");
+                iframeContainer.style.textAlign = "center";
+                iframeContainer.style.marginTop = "20px";
+
+                // Create iframe wrapper for responsive aspect ratio
                 const iframeWrapper = document.createElement("div");
                 iframeWrapper.style.position = "relative";
                 iframeWrapper.style.width = "100%";
@@ -21,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 iframeWrapper.style.overflow = "hidden";
                 iframeWrapper.style.margin = "auto";
 
-                // Iframe element
+                // Create iframe element
                 const iframe = document.createElement("iframe");
                 iframe.src = `https://lp352engiao.com/play/${imdbTitle}`;
                 iframe.style.position = "absolute";
@@ -32,10 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 iframe.setAttribute("frameborder", "0");
                 iframe.setAttribute("allowfullscreen", "allowfullscreen");
 
-                // Append iframe inside wrapper
+                // Append iframe to wrapper, wrapper to container, and container to main element
                 iframeWrapper.appendChild(iframe);
-                mainElement.appendChild(iframeWrapper);
-
+                iframeContainer.appendChild(iframeWrapper);
+                mainElement.appendChild(iframeContainer);
             }
         }
     }
